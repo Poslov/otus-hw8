@@ -1,4 +1,4 @@
-$ErrorActionPreference = "Stop"
+﻿$ErrorActionPreference = "Stop"
 
 Write-Host "Запуск Ollama..."
 docker compose up -d
@@ -10,7 +10,7 @@ $ready = $false
 for ($i = 0; $i -lt 60; $i++) {
     try {
         Invoke-RestMethod `
-            -Uri "http://localhost:11434/api/tags" `
+            -Uri "http://localhost:11435/api/tags" `
             -ErrorAction Stop | Out-Null
 
         $ready = $true
